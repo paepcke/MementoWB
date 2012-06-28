@@ -1,0 +1,2 @@
+select time from Crawl_state_05_2012 where 
+   time > '2012-05-07 02:10:41'
