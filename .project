@@ -20,4 +20,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>lib</name>
+			<type>2</type>
+			<location>/home/paepcke/EclipseWorkspaces/MementoWB/target/lib</location>
+		</link>
+	</linkedResources>
 </projectDescription>
