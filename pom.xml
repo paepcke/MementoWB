@@ -24,6 +24,13 @@
       <type>so</type>
       <version>${sqlite4java.version}</version>
     </dependency>
+    <dependency>
+      <groupId>com.almworks.sqlite4java</groupId>
+      <!-- For Windows 64 bit: -->
+      <artifactId>sqlite4java-win32-x64</artifactId>
+      <type>dll</type>
+      <version>${sqlite4java.version}</version>
+    </dependency>
   </dependencies> 
 
  <build>
@@ -33,7 +40,7 @@
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
-            <id>copy</id>
+            <id>copyLinuxSO</id>
             <phase>compile</phase>
             <goals>
               <goal>copy</goal>
@@ -45,6 +52,25 @@
                   <artifactId>libsqlite4java-linux-amd64</artifactId>
                   <version>${sqlite4java.version}</version>
                   <type>so</type>
+                  <overWrite>true</overWrite>
+                  <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copyWinDLL</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.almworks.sqlite4java</groupId>
+                  <artifactId>sqlite4java-win32-x64</artifactId>
+                  <version>${sqlite4java.version}</version>
+                  <type>dll</type>
                   <overWrite>true</overWrite>
                   <outputDirectory>${project.build.directory}/lib</outputDirectory>
                 </artifactItem>

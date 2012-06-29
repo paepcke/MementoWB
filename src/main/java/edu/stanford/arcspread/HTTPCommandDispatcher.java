@@ -72,6 +72,7 @@ public class HTTPCommandDispatcher implements HttpConstants,
 		initDataStructs();
 		// The -1 causes the default port to be used:
 		sl= new SocketListener(-1);
+		@SuppressWarnings("unused")
 		PropertyChangeSupport pcs = new PropertyChangeSupport(this);
 
 		new Thread(sl).start();
